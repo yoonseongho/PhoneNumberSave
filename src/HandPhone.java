@@ -2,7 +2,9 @@ import java.io.*;
 import java.util.Scanner;
 
 public class HandPhone {
-    static String fname = "/Users/yunseongho/Documents/IdeaProjects/HandPhone/temp";
+
+    // 메모장 위치
+    static String fname = "";
 
     static class address {
         String name;
