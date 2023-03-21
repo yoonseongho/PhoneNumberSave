@@ -1,10 +1,11 @@
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HandPhone {
 
-    // 메모장 위치
-    static String fname = "";
+    /* 메모장 위치 */
+    static String fname = "C:\\Users\\Administrator\\IdeaProjects\\PhoneNumberSave\\temp\\juso\\juso.txt";
 
     static class address {
         String name;
@@ -116,7 +117,7 @@ public class HandPhone {
             Scanner sc = new Scanner(System.in);
 
             /* 연락처 파일의 내용 전체를 저장하기 위한 문자열 배열 */
-            String[] read_str = new String[100]; /* 최대 연락처 개수를 100개로 지정 */
+            ArrayList<String> read_str = new ArrayList<String>(); /* 연락처 개수 저장 */
             String str = "";
             int del_line, i, count = 0;
 
@@ -136,7 +137,7 @@ public class HandPhone {
                     break;
 
                 if(i + 1 != del_line) { /* 삭제하는 행이 아니라면 추가 */
-                    read_str[count] = str;
+                    read_str.set(count, str);
                     count++;
                 }
                 else
@@ -149,7 +150,7 @@ public class HandPhone {
                 BufferedWriter bw = new BufferedWriter(new FileWriter(fname));
 
                 for(i = 0; i < count; i++) {
-                    bw.write(read_str[i]);
+                    bw.write(read_str.get(i));
                     bw.newLine();
                 }
                 bw.close();
