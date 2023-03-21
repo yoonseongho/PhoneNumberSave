@@ -132,7 +132,7 @@ public class HandPhone {
             System.out.print("삭제할 행 번호는 >> ");
             del_line = sc.nextInt();
 
-            for(i = 0; i < read_str.size(); i++) { /* 파일에 있는 동안에 수행, 단 최대 100개 */
+            for(i = 0; i < read_str.size(); i++) { /* 파일에 있는 동안에 수행 */
                 if((str = br.readLine()) == null)
                     break;
 
